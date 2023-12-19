@@ -45,21 +45,35 @@ public class AndroidTests extends TestBase {
 
   @Test
   @Tag("emulator")
-  void cheackOnboardingTest() {
+  @DisplayName("Проверка текстов на экранах онбординга")
+  void checkOnboardingTest() {
     step("Check 1 page", () -> {
-      onboardingPage.checkHeadingLabelFirst("1.  English")
+      onboardingPage.checkPrimaryText("The Free Encyclopedia …in over 300 languages")
+              .checkSecondaryText("We’ve found the following on your device:")
+              .checkOptionLabel("1. English")
+              .checkLanguageButtonText("Add or edit languages")
               .continueButtonClick();
     });
     step("Check 2 page", () -> {
-      onboardingPage.checkHeadingLabelSecond("New ways to explore")
+      onboardingPage.checkPrimaryText("New ways to explore")
+              .checkSecondaryText("Dive down the Wikipedia rabbit hole with a constantly updating " +
+                      "Explore feed. Customize the feed to your interests – whether it’s learning about historical " +
+                      "events On this day, or rolling the dice with Random.")
               .continueButtonClick();
     });
     step("Check 3 page", () -> {
-      onboardingPage.checkHeadingLabelThird("Reading lists with sync")
+      onboardingPage.checkPrimaryText("Reading lists with sync")
+              .checkSecondaryText("You can make reading lists from articles you want to read later, " +
+                      "even when you’re offline. Login to your Wikipedia account to sync your reading lists. " +
+                      "Join Wikipedia")
               .continueButtonClick();
     });
     step("Check 4 page", () -> {
-      onboardingPage.checkHeadingLabelFourth("Send anonymous data");
+      onboardingPage.checkPrimaryText("Send anonymous data")
+              .checkSecondaryText("Help make the app better by letting us know how you use it. " +
+                      "Data collected is anonymous. Learn more")
+              .checkRejectButtonText("Reject")
+              .checkAcceptButtonText("Accept");
     });
   }
 
