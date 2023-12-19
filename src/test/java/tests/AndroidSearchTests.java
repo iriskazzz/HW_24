@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ArticlePage;
+import pages.OnboardingPage;
 import pages.SearchPage;
 import pages.SearchResultPage;
 
@@ -17,6 +18,7 @@ public class AndroidSearchTests extends TestBase {
   private SearchPage searchPage = new SearchPage();
   private SearchResultPage searchResult = new SearchResultPage();
   private ArticlePage articlePage = new ArticlePage();
+  private OnboardingPage onboardingPage = new OnboardingPage();
 
   private final static String SEARCH_VALUE = "Appium";
   private final static String ERROR_TEXT_VALUE = "An error occurred";
@@ -47,19 +49,20 @@ public class AndroidSearchTests extends TestBase {
   @Tag("emulator")
   void searchTests() {
     step("Check 1 page", () -> {
-      $(id("org.wikipedia.alpha:id/option_label")).shouldHave(text("1.  English"));
-      $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+      onboardingPage.checkHeadingLabelFirst("1.  English")
+              .continueButtonClick();
+
     });
     step("Check 2 page", () -> {
-      $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("New ways to explore"));
-      $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+      onboardingPage.checkHeadingLabelSecond("New ways to explore")
+              .continueButtonClick();
     });
     step("Check 3 page", () -> {
-      $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Reading lists with sync"));
-      $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+      onboardingPage.checkHeadingLabelThird("Reading lists with sync")
+              .continueButtonClick();
     });
-    step("Check 3 page", () -> {
-      $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Send anonymous data"));
+    step("Check 4 page", () -> {
+      onboardingPage.checkHeadingLabelFourth("Send anonymous data");
     });
   }
 
