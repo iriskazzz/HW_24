@@ -8,12 +8,11 @@ import pages.OnboardingPage;
 import pages.SearchPage;
 import pages.SearchResultPage;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
 import static io.qameta.allure.Allure.step;
 
-public class AndroidSearchTests extends TestBase {
+public class AndroidTests extends TestBase {
 
   private SearchPage searchPage = new SearchPage();
   private SearchResultPage searchResult = new SearchResultPage();
@@ -44,14 +43,12 @@ public class AndroidSearchTests extends TestBase {
     );
   }
 
-
   @Test
   @Tag("emulator")
-  void searchTests() {
+  void cheackOnboardingTest() {
     step("Check 1 page", () -> {
       onboardingPage.checkHeadingLabelFirst("1.  English")
               .continueButtonClick();
-
     });
     step("Check 2 page", () -> {
       onboardingPage.checkHeadingLabelSecond("New ways to explore")
