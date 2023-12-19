@@ -2,8 +2,6 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.BrowserstackConfig;
-import config.MobileConfig;
-import config.UserConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -15,10 +13,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
-
-  MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class, System.getProperties());
-
-  UserConfig userConfig = ConfigFactory.create(UserConfig.class, System.getProperties());
   BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
   @Nonnull
@@ -28,15 +22,15 @@ public class BrowserstackDriver implements WebDriverProvider {
     MutableCapabilities caps = new MutableCapabilities();
 
     // Set your access credentials
-    caps.setCapability("browserstack.user", userConfig.getUserName());
-    caps.setCapability("browserstack.key", userConfig.getAccessKey());
+    caps.setCapability("browserstack.user", browserstackConfig.getUserName());
+    caps.setCapability("browserstack.key", browserstackConfig.getAccessKey());
 
     // Set URL of the application under test
-    caps.setCapability("app", mobileConfig.getAppUrl());
+    caps.setCapability("app", browserstackConfig.getAppUrl());
 
     // Specify device and os_version for testing
-    caps.setCapability("device", mobileConfig.getDeviceModel());
-    caps.setCapability("os_version", mobileConfig.getDeviceVersion());
+    caps.setCapability("device", browserstackConfig.getDeviceModel());
+    caps.setCapability("os_version", browserstackConfig.getDeviceVersion());
 
     // Set other BrowserStack capabilities
     caps.setCapability("project", browserstackConfig.getProject());

@@ -20,4 +20,19 @@ public interface BrowserstackConfig extends Config {
   @Key("URL")
   String getURL();
 
+  @Key("deviceModel")
+  String getDeviceModel();
+
+  @Key("deviceVersion")
+  String getDeviceVersion();
+
+  @Key("appUrl")
+  String getAppUrl();
+
+  @Key("userName")
+  String getUserName();
+
+  @Key("accessKey")
+  String getAccessKey();
+
 }
