@@ -48,6 +48,7 @@ tasks.withType(Test) {
 }
 
 tasks.register("testByTags", Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform {
         def tags = System.getProperty("tags", "")
         tags.split(",").each { String str ->

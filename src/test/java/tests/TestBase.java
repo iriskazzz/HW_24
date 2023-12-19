@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
 import drivers.EmulatorDriver;
@@ -14,14 +15,14 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
+
   public static String deviceHost = System.getProperty("deviceHost");
+
   @BeforeAll
   static void beforeAll() {
-//    switch (deviceHost) {
-//      case "browserstack" -> Configuration.browser = BrowserstackDriver.class.getName();
-//      case "emulator" -> Configuration.browser = EmulatorDriver.class.getName();
-//    }
-    Configuration.browser = BrowserstackDriver.class.getName();
+    Configuration.browser = deviceHost.equals("browserstack") ?
+            BrowserstackDriver.class.getName() :
+            EmulatorDriver.class.getName();
     Configuration.browserSize = null;
     Configuration.timeout = 30000;
   }
@@ -34,7 +35,8 @@ public class TestBase {
 
   @AfterEach
   void addAttachments() {
-//    Attach.screenshotAs("Last screenshot");
+    if (deviceHost.equals("browserstack")) Attach.addVideo(Selenide.sessionId().toString());
+    else Attach.screenshotAs("Last screenshot");
     Attach.pageSource();
     closeWebDriver();
   }

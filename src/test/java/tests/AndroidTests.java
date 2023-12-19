@@ -27,8 +27,8 @@ public class AndroidTests extends TestBase {
   @DisplayName("Проверка отображения сообщения об ошибке на странице Википедии")
   void checkErrorTextTest() {
     step("Ввод значения Appium в строку поиска", () -> {
-              searchPage.clickOnFirstSearch()
-                      .clickOnSecondSearch(SEARCH_VALUE);
+      searchPage.clickOnFirstSearch()
+              .clickOnSecondSearch(SEARCH_VALUE);
     });
     step("Клик по строке поиска с содержанием текста введенного запроса", () -> {
               searchResult.clickOnLineSearch(SEARCH_VALUE);
