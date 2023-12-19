@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestBase {
   @BeforeAll
   static void beforeAll() {
-    Configuration.browser = EmulatorDriver.class.getName();
+    Configuration.browser = BrowserstackDriver.class.getName();
     Configuration.browserSize = null;
     Configuration.timeout = 30000;
   }

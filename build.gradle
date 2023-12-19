@@ -46,3 +46,13 @@ tasks.withType(Test) {
         }
     }
 }
+
+tasks.register("testByTags", Test) {
+    useJUnitPlatform {
+        def tags = System.getProperty("tags", "")
+        tags.split(",").each { String str ->
+            def tag = str.trim()
+            if (tag != "") includeTags(tag)
+        }
+    }
+}
