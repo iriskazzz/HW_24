@@ -1,8 +1,10 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.EmulatorConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 
@@ -14,22 +16,23 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
-import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class EmulatorDriver implements WebDriverProvider {
+  EmulatorConfig emulatorConfig = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
+
   @Nonnull
   @Override
   public WebDriver createDriver(@Nonnull Capabilities capabilities) {
     UiAutomator2Options options = new UiAutomator2Options();
 
     options.setAutomationName(ANDROID_UIAUTOMATOR2)
-            .setPlatformName(ANDROID)
-            .setPlatformVersion("14.0")
-            .setDeviceName("Pixel_3a_API_34_extension_level_7_x86_64")
+            .setPlatformName(emulatorConfig.getPlatformName())
+            .setPlatformVersion(emulatorConfig.getPlatformVersion())
+            .setDeviceName(emulatorConfig.getDeviceName())
             .setApp(getAppPath())
-            .setAppPackage("org.wikipedia.alpha")
-            .setAppActivity("org.wikipedia.main.MainActivity");
+            .setAppPackage(emulatorConfig.getAppPackage())
+            .setAppActivity(emulatorConfig.getAppActivity());
 
     return new AndroidDriver(getAppiumServerUrl(), options);
   }

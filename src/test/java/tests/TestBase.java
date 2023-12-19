@@ -1,7 +1,6 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
 import drivers.EmulatorDriver;
@@ -15,8 +14,13 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
+  public static String deviceHost = System.getProperty("deviceHost");
   @BeforeAll
   static void beforeAll() {
+//    switch (deviceHost) {
+//      case "browserstack" -> Configuration.browser = BrowserstackDriver.class.getName();
+//      case "emulator" -> Configuration.browser = EmulatorDriver.class.getName();
+//    }
     Configuration.browser = BrowserstackDriver.class.getName();
     Configuration.browserSize = null;
     Configuration.timeout = 30000;
