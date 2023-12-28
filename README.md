@@ -60,9 +60,14 @@ clean testByTags
 * <code>DEVICE_HOST</code> – переменная определения среды для запуска тестов.
 
 ## Сборка в [Jenkins](https://jenkins.autotests.cloud/job/zolina_diplom_mobile/)
+
+Для запуска сборки необходимо перейти в раздел <code>Build with Parameters</code> указать нужный параметр и нажать кнопку <code>Build</code>.
+
 <p align="center">
 <img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
 </p>
+
+После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появится значок <code>Allure Report</code> кликнув по которому, откроется страница с сформированным html-отчетом.
 
 ## Пример [Allure-отчета](https://jenkins.autotests.cloud/job/zolina_diplom_mobile/7/allure/)
 ### Overview
@@ -77,9 +82,14 @@ clean testByTags
 <img title="Test Results in Alure" src="media/screens/ResultTest.png">
 </p>
 
-## Видео примера запуска тестов в Browserstack
+## Пример запуска теста в Browserstack
 
-К каждому тесту в отчете прилагается видео прогона
+К каждому тесту в отчете прилагается видео.
+
+На данном видео выполняется:
+
+- Проверка работы строки поиска
+
 <p align="center">
   <img title="Selenoid Video" src="media/screens/video.gif">
 </p>
