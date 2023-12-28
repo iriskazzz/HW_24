@@ -1,24 +1,19 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.ElementsCollection;
+import io.appium.java_client.AppiumBy;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static io.appium.java_client.AppiumBy.id;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class ArticlePage {
-    private SelenideElement errorText = $(id("org.wikipedia.alpha:id/view_wiki_error_text")),
-            errorButton = $(id("org.wikipedia.alpha:id/view_wiki_error_button"));
+
+    private ElementsCollection nameArticle = $$(AppiumBy.className("android.widget.TextView"));
 
 
-    public ArticlePage checkErrorText(String valueErrorText) {
-        errorText.shouldHave(text(valueErrorText));
-
-        return this;
-    }
-
-    public ArticlePage checkErrorButton(String errorButtonName) {
-        errorButton.shouldHave(text(errorButtonName));
+    public ArticlePage checkNameArticle(String valueNameArticle) {
+        nameArticle.findBy(text(valueNameArticle)).shouldBe(visible);
         return this;
     }
 

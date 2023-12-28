@@ -13,7 +13,8 @@ public class OnboardingPage {
             languageButton = $(id("org.wikipedia.alpha:id/addLanguageButton")),
             rejectButton = $(id("org.wikipedia.alpha:id/rejectButton")),
             acceptButton = $(id("org.wikipedia.alpha:id/acceptButton")),
-            continueButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button"));
+            continueButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
+            skipButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button"));
 
 
     public OnboardingPage checkPrimaryText(String primaryTextLabel) {
@@ -48,6 +49,11 @@ public class OnboardingPage {
 
     public OnboardingPage continueButtonClick() {
         continueButton.click();
+        return this;
+    }
+
+    public OnboardingPage skipButtonClick() {
+        skipButton.click();
         return this;
     }
 
