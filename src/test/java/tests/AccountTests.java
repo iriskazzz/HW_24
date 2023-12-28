@@ -21,7 +21,6 @@ public class AccountTests extends TestBase {
 
     @Test
     @Tag("login")
-    @Tag("smoke")
     @Owner("izolina")
     @Feature("Авторизация в Википедии")
     @Story("Страница Логина в Википедии")

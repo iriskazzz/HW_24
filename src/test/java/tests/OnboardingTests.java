@@ -14,7 +14,6 @@ public class OnboardingTests extends TestBase {
 
     @Test
     @Tag("onboarding")
-    @Tag("smoke")
     @Owner("izolina")
     @Feature("Онборд")
     @Severity(SeverityLevel.CRITICAL)
