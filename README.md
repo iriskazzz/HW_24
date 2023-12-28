@@ -2,14 +2,14 @@
 
 ## :open_book: Содержание:
 
-- [Технологии и инструменты](#technologist-технологии-и-инструменты)
-- [Тест кейсы](#bookmark_tabs-тест-кейсы)
-- [Запуск тестов из терминала](#computer-запуск-тестов-из-терминала)
-- [Сборка в Jenkins](#-сборка-в-jenkins)
-- [Отчет о результатах тестирования в Allure Report](#-отчет-о-результатах-тестирования-в-Allure-report)
-- [Пример запуска теста в Browserstack](#-пример-запуска-теста-в-Browserstack)
+- [Технологии и инструменты](#технологии-и-инструменты)
+- [Тест кейсы](#тест-кейсы)
+- [Запуск тестов из терминала](#запуск-тестов-из-терминала)
+- [Сборка в Jenkins](#сборка-в-jenkins)
+- [Пример Allure-отчета](#пример-Allure-отчета)
+- [Пример запуска теста в Browserstack](#пример-запуска-теста-в-Browserstack)
 
-## :gear: Технологии и инструменты
+## Технологии и инструменты
 
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img width="6%" title="IntelliJ IDEA" src="media/logo/Intelij_IDEA.svg"></a>
@@ -22,7 +22,6 @@
 <a href="https://www.browserstack.com/"><img width="6%" title="Browserstack" src="media/logo/Browserstack.svg"></a>
 <a href="https://allurereport.org/"><img width="6%" title="Allure Report" src="media/logo/Allure_Report.svg"></a>
 <a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/logo/Jenkins.svg"></a>
-<a href="https://web.telegram.org/"><img width="6%" title="Telegram" src="media/logo/Telegram.svg"></a>
 </p>
 
 ## Тест кейсы
@@ -44,9 +43,9 @@
 gradle clean test -DdeviceHost=browserstack
 ```
 
-При выполнении команды, данные тесты запустятся удаленно в <code>Browserstack</code>.
+При выполнении команды, данные тесты запустятся удаленно в <code>Browserstack</code>
 
-При необходимости также можно переопределить параметры запуска
+При необходимости также можно переопределить параметры запуска:
 
 ```
 clean testByTags
