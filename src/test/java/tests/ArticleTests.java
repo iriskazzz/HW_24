@@ -24,8 +24,7 @@ public class ArticleTests extends TestBase {
     @Tag("article")
     @Tag("smoke")
     @Owner("izolina")
-    @Feature("Статьи")
-    @Story("Поиск")
+    @Feature("Поиск")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка работы строки поиска")
     void checkSearchTest() {
