@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,10 @@ public class OnboardingTests extends TestBase {
 
     @Test
     @Tag("onboarding")
+    @Tag("smoke")
+    @Owner("izolina")
+    @Feature("Онборд")
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка текстов на экранах онбординга")
     void checkOnboardingTest() {
         step("Проверка первого экрана", () -> {

@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,11 @@ public class ArticleTests extends TestBase {
 
     @Test
     @Tag("article")
+    @Tag("smoke")
+    @Owner("izolina")
+    @Feature("Статьи")
+    @Story("Поиск")
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка работы строки поиска")
     void checkSearchTest() {
         step("Скип экрана онбординга", () -> {

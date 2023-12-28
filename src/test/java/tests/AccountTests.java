@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,12 @@ public class AccountTests extends TestBase {
 
     @Test
     @Tag("login")
-    @DisplayName("Проверка полей создания нового аккаунта")
+    @Tag("smoke")
+    @Owner("izolina")
+    @Feature("Авторизация в Википедии")
+    @Story("Страница Логина в Википедии")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Проверка объектов на странице создания нового аккаунта")
     void checkAccountPageTest() {
         step("Скип экрана онбординга", () -> {
             onboardingPage.skipButtonClick();
