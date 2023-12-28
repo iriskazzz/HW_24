@@ -7,19 +7,19 @@ import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
 
 public class ArticlePage {
-  private SelenideElement errorText = $(id("org.wikipedia.alpha:id/view_wiki_error_text")),
-          errorButton = $(id("org.wikipedia.alpha:id/view_wiki_error_button"));
+    private SelenideElement errorText = $(id("org.wikipedia.alpha:id/view_wiki_error_text")),
+            errorButton = $(id("org.wikipedia.alpha:id/view_wiki_error_button"));
 
 
-  public ArticlePage checkErrorText(String valueErrorText) {
-    errorText.shouldHave(text(valueErrorText));
+    public ArticlePage checkErrorText(String valueErrorText) {
+        errorText.shouldHave(text(valueErrorText));
 
-    return this;
-  }
+        return this;
+    }
 
-  public ArticlePage checkErrorButton(String errorButtonName) {
-    errorButton.shouldHave(text(errorButtonName));
-    return this;
-  }
+    public ArticlePage checkErrorButton(String errorButtonName) {
+        errorButton.shouldHave(text(errorButtonName));
+        return this;
+    }
 
 }

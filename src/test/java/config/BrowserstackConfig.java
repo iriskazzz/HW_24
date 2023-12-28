@@ -8,31 +8,31 @@ import org.aeonbits.owner.Config;
 
 public interface BrowserstackConfig extends Config {
 
-  @Key("project")
-  String getProject();
+    @Key("project")
+    String getProject();
 
-  @Key("build")
-  String getBuild();
+    @Key("build")
+    String getBuild();
 
-  @Key("name")
-  String getName();
+    @Key("name")
+    String getName();
 
-  @Key("URL")
-  String getURL();
+    @Key("URL")
+    String getURL();
 
-  @Key("deviceModel")
-  String getDeviceModel();
+    @Key("deviceModel")
+    String getDeviceModel();
 
-  @Key("deviceVersion")
-  String getDeviceVersion();
+    @Key("deviceVersion")
+    String getDeviceVersion();
 
-  @Key("appUrl")
-  String getAppUrl();
+    @Key("appUrl")
+    String getAppUrl();
 
-  @Key("userName")
-  String getUserName();
+    @Key("userName")
+    String getUserName();
 
-  @Key("accessKey")
-  String getAccessKey();
+    @Key("accessKey")
+    String getAccessKey();
 
 }

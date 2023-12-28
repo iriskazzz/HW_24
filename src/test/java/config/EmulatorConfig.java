@@ -8,19 +8,19 @@ import org.aeonbits.owner.Config;
 
 public interface EmulatorConfig extends Config {
 
-  @Key("platformName")
-  String getPlatformName();
+    @Key("platformName")
+    String getPlatformName();
 
-  @Key("platformVersion")
-  String getPlatformVersion();
+    @Key("platformVersion")
+    String getPlatformVersion();
 
-  @Key("deviceName")
-  String getDeviceName();
+    @Key("deviceName")
+    String getDeviceName();
 
-  @Key("appPackage")
-  String getAppPackage();
+    @Key("appPackage")
+    String getAppPackage();
 
-  @Key("appActivity")
-  String getAppActivity();
+    @Key("appActivity")
+    String getAppActivity();
 
 }
