@@ -16,28 +16,30 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-  public static String deviceHost = System.getProperty("deviceHost");
+    public static String deviceHost = System.getProperty("deviceHost");
 
-  @BeforeAll
-  static void beforeAll() {
-    Configuration.browser = deviceHost.equals("browserstack") ?
-            BrowserstackDriver.class.getName() :
-            EmulatorDriver.class.getName();
-    Configuration.browserSize = null;
-    Configuration.timeout = 30000;
-  }
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.browser = deviceHost.equals("browserstack") ?
+                BrowserstackDriver.class.getName() :
+                EmulatorDriver.class.getName();
+        Configuration.browserSize = null;
+        Configuration.timeout = 30000;
+    }
 
-  @BeforeEach
-  void beforeEach() {
-    SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-    open();
-  }
+    @BeforeEach
+    void beforeEach() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        open();
+    }
 
-  @AfterEach
-  void addAttachments() {
-    if (deviceHost.equals("browserstack")) Attach.addVideo(Selenide.sessionId().toString());
-    else Attach.screenshotAs("Last screenshot");
-    Attach.pageSource();
-    closeWebDriver();
-  }
+    @AfterEach
+    void addAttachments() {
+        if (deviceHost.equals("browserstack")) Attach.addVideo(Selenide.sessionId().toString());
+        else Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        closeWebDriver();
+    }
+
+
 }
