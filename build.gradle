@@ -57,3 +57,7 @@ tasks.register("testByTags", Test) {
         }
     }
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

@@ -68,7 +68,7 @@ clean testByTags
 
 После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появится значок <code>Allure Report</code> кликнув по которому, откроется страница с сформированным html-отчетом.
 
-## Пример [Allure-отчета](https://jenkins.autotests.cloud/job/zolina_diplom_mobile/7/allure/)
+## Пример [Allure-отчета](https://jenkins.autotests.cloud/job/zolina_diplom_mobile/allure)
 ### Overview
 
 <p align="center">
