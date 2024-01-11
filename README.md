@@ -24,6 +24,14 @@
 <a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/logo/Jenkins.svg"></a>
 </p>
 
+Автотесты в этом проекте написаны на <code>Java</code>.\
+<code>Gradle</code> — используется как инструмент автоматизации сборки.\
+<code>JUnit5</code> — для выполнения тестов.\
+<code>Appium</code>, <code>Android Studio</code> — для запуска мобильных тестов локально на эмуляторе мобильных устройств.\
+<code>Browserstack</code> — для запуска мобильных тестов удаленно.\
+<code>Allure Report</code> — для визуализации результатов тестирования.\
+<code>Jenkins</code> — CI/CD для запуска тестов удаленно.\
+
 ## Тест кейсы
 - Проверка объектов на странице создания нового аккаунта
 - Проверка работы строки поиска

@@ -28,16 +28,16 @@ public class OnboardingTests extends TestBase {
         });
         step("Проверка второго экрана", () -> {
             onboardingPage.checkPrimaryText("New ways to explore")
-                    .checkSecondaryText("Dive down the Wikipedia rabbit hole with a constantly updating " +
-                            "Explore feed. Customize the feed to your interests – whether it’s learning about historical " +
-                            "events On this day, or rolling the dice with Random.")
+                    .checkSecondaryText("Dive down the Wikipedia rabbit hole with a constantly " +
+                            "updating Explore feed. Customize the feed to your interests – whether it’s learning " +
+                            "about historical events On this day, or rolling the dice with Random.")
                     .continueButtonClick();
         });
         step("Проверка третьего экрана", () -> {
             onboardingPage.checkPrimaryText("Reading lists with sync")
-                    .checkSecondaryText("You can make reading lists from articles you want to read later, " +
-                            "even when you’re offline. Login to your Wikipedia account to sync your reading lists. " +
-                            "Join Wikipedia")
+                    .checkSecondaryText("You can make reading lists from articles you want to read " +
+                            "later, even when you’re offline. Login to your Wikipedia account to sync your reading " +
+                            "lists. Join Wikipedia")
                     .continueButtonClick();
         });
         step("Проверка четвертого экрана", () -> {
